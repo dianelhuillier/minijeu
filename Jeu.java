@@ -15,8 +15,8 @@ public class Jeu {
 		// 		
 
 		
-		Player player1 = new Player("Player 1", 50.0, 1.5);
-		Player player2 = new Player("Player 2", 40.0, 2.0);
+		Player player1 = new Player("Player 1", 50.0, 2.5);
+		Player player2 = new Player("Player 2", 40.0, 4.0);
 		System.out.println("Bienvenue " + player1.getName() + " et " + player2.getName() + "\n"
 				+ player1.getName() + ", quel est votre nom ?");
 
