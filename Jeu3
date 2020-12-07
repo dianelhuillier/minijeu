@@ -38,9 +38,9 @@ public class Jeu3 {
 				System.out.println(player2.getName() + ", voulez vous \"attaquer\" ou \"parer\" ?");
 				act2 = clavier.nextLine();
 			
-	//		if (!act1.equals("attaquer") || !act1.equals("parer") || !act2.equals("attaquer") || !act2.equals("parer")) {
-		//		System.out.println("Faute de frappe, tour annulé !");
-			//} else {
+			if (!act1.equals("attaquer") && !act1.equals("parer") || !act2.equals("attaquer") && !act2.equals("parer")) {
+				System.out.println("Faute de frappe, tour annulé !");
+			} else {
 					if (act1.equals("attaquer") && act2.equals("attaquer")) {
 						player2.damage(player1.getAttack());
 						player1.damage(player2.getAttack());
@@ -65,7 +65,7 @@ public class Jeu3 {
 					}
 					
 					
-			//}
+			}
 				
 				
 			
