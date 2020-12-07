@@ -1,5 +1,6 @@
 package diane.jeu;
 import java.util.Scanner;
+
 public class Jeu2 {
 	static Scanner clavier = new Scanner(System.in);
 
@@ -37,21 +38,25 @@ public class Jeu2 {
 			
 			while (player1.getHealth()>0 && player2.getHealth()>0) {
 			
-				
-			// tour joueur 1
+			
 				System.out.println(player1.getName() + ", voulez vous \"attaquer\" ou \"parer\" ?");
 				act1 = clavier.nextLine();
 				System.out.println(player2.getName() + ", voulez vous \"attaquer\" ou \"parer\" ?");
 				act2 = clavier.nextLine();
-
+			
+			if (!act1.equals("attaquer") || !act1.equals("parer") || !act2.equals("attaquer") || !act2.equals("parer")) {
+				System.out.println("Faute de frappe, tour annulé !");
+				}
+				else {
 				if (act1.equals("attaquer")) {
 					player2.damage(player1.getAttack());
 					System.out.println(player1.getName() + " attaquer et inflige " + player1.getAttack() + " points de dégât.\n"
 							+ player2.getName() + " n'a plus que " + player2.getHealth() + " points de vie.");
 					
-				} else if (act1.equals("parer")) {
+				} 
+				if (act1.equals("parer")) {
 					player1.hide(player2.getAttack() / 2);
-					System.out.println(player1.getName() + " se défend !" + player2.getName() + " inflige " + player1.getAttack()/2 + " points de dégât.\n"
+					System.out.println(player1.getName() + " se défend ! " + player2.getName() + " inflige " + player1.getAttack()/2 + " points de dégât.\n"
 							+ player1.getName() + " n'a plus que " + player1.getHealth() + " points de vie.");
 				} 
 				
@@ -61,12 +66,15 @@ public class Jeu2 {
 					System.out.println(player2.getName() + " inflige " + player2.getAttack() + " points de dégât.\n"
 							+ player1.getName() + " n'a plus que " + player1.getHealth() + " points de vie.");
 					
-				} else if (act2.equals("parer")) {
+				} 
+				if (act2.equals("parer")) {
 					player2.hide(player1.getAttack() / 2);
-					System.out.println(player2.getName() + " se défend !" + player1.getName() + " inflige " + player1.getAttack()/2 + " points de dégât.\n"
+					System.out.println(player2.getName() + " se défend ! " + player1.getName() + " inflige " + player1.getAttack()/2 + " points de dégât.\n"
 							+ player2.getName() + " n'a plus que " + player2.getHealth() + " points de vie.");
 				}
-			
+				
+					}
+
 				tour++;
 				System.out.println("Tour " + tour);
 			} 
