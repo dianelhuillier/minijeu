@@ -53,9 +53,7 @@ public class Jeu2 {
 					player1.hide(player2.getAttack() / 2);
 					System.out.println(player1.getName() + " se défend !" + player2.getName() + " inflige " + player1.getAttack()/2 + " points de dégât.\n"
 							+ player1.getName() + " n'a plus que " + player1.getHealth() + " points de vie.");
-				} catch (Exception e) {
-					// TODO: handle exception
-				}
+				} 
 				
 				
 				if (act2.equals("attaquer")) {
